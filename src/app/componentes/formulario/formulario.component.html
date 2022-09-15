@@ -1,0 +1,40 @@
+<p>formulario works!</p>
+<section>
+  <fieldset>
+    <label>Ingrese numero de la Pokedex</label>
+    <input type="number" [value]="pokemon.npd" (input)="cNpd($event)">
+  </fieldset>
+  <fieldset>
+    <label>Ingrese nombre del pokemon</label>
+    <input type="text" [value]="pokemon.nombre" (input)="cNombre($event)">
+  </fieldset>
+  <fieldset>
+    <label>Ingrese la URL de la foto</label>
+    <input type="url" [value]="pokemon.foto" (input)="cFoto($event)">
+    <app-mostrar-imagen [imagen]="pokemon.foto"></app-mostrar-imagen>
+  </fieldset>
+  <fieldset>
+    <label>Seleccione el ataque del rango {{pokemon.ataqueBase}}</label>
+    <input type="range" min="1" max="150" [value]="pokemon.ataqueBase" (input) = "cAb($event)">
+  </fieldset>
+  <fieldset>
+    <label>Seleccione la naturaleza de su pokemon</label>
+    <select [value]="pokemon.naturaleza" (change)="cNatu($event)">
+      <option *ngFor="let variable of nts" [value] = "variable">
+        {{variable}}
+      </option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <label>Seleccione el tipo de pokemon</label>
+    <select [value]="pokemon.tipo" (change)="cTipo($event)">
+      <option *ngFor="let temporal of tipos" [value] = "temporal">
+        {{temporal}}
+      </option>
+    </select>
+    <fieldset>
+      <button type="button" (click)="guardarElemento()">Guardar</button>
+    </fieldset>
+  </fieldset>
+
+</section>

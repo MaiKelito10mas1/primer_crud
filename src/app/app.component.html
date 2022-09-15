@@ -1,0 +1,15 @@
+<app-mostrar-imagen
+  [imagen]="primeraImagen"
+></app-mostrar-imagen>
+
+<app-mostrar-imagen
+  [imagen]="segundaImagen"
+></app-mostrar-imagen>
+
+<app-mostrar-imagen
+  [imagen]="terceraImagen"
+></app-mostrar-imagen>
+
+<hr>
+<app-formulario (enviarPokemon)="escucharPokemon($event)"></app-formulario>
+<app-listar-pokemones [pokemones]="listaPokemon"></app-listar-pokemones>
